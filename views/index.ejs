@@ -1,0 +1,32 @@
+<h1>Express JS Template Engine</h1>   
+    <h2>Hello, <%= name %> </h2>
+
+
+    <table class="table table-bordered table-striped mt-4">
+        <thead>
+            <tr class="text-center">
+                <th>No.</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Nomor HP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (user.length < 1) { %>
+                <tr>
+                    <th>
+                        <h3><strong>User Data Empty</strong></h3>
+                    </th>
+                </tr>                
+            <% } else { %>
+                <% let no = 1; user.forEach(userdata => { %>
+                    <tr>
+                        <td class="text-center"><%= no++ %> </td>
+                        <td><%= userdata.nama %></td>
+                        <td><%= userdata.email %></td>
+                        <td><%= userdata.nohp %></td>
+                    </tr>
+                <% }) %>
+            <% } %> 
+        </tbody>
+    </table>
